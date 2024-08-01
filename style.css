@@ -74,14 +74,17 @@ margin: 4px auto;
   border: 0;
   border-radius: 50%;
   z-index: 1;
-  left: 0;
+   animation: slide-back 0.2s;
   top: 50%;
   transform: translateY(-50%);
 }
 
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
 .light #switch button{
-  right: 0;
-  left: initial;
+ animation: slide-in 0.2s forwards;
 }
 
 #switch span{
@@ -132,7 +135,6 @@ ul li a:hover {
 }
 
 #social-links a {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +149,6 @@ ul li a:hover {
 
 footer {
   font-size: 14px;
-
   padding: 24px 0;
   text-align: center;
 }
@@ -164,4 +165,24 @@ footer {
    --bg-url: url(assets/bg-desktop-light.jpg);
  }
 
+}
+
+/* animações */
+
+@keyframes slide-in {
+from{
+left: 0;
+}
+to{
+left: 50%;
+}
+}
+
+@keyframes slide-back {
+from{
+  left: 50%;
+}
+to{
+  left: 0;
+}
 }
